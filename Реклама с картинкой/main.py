@@ -56,21 +56,33 @@ def rek():
 </html>'''
 
 
-@app.route('/image_mars')
-def mars():
+@app.route('/promotion_image')
+def rek():
     return '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Привет, Марс!</title>
-    <h1>Жди нас, Марс!</h1>
-    <img src="img/mars.jpg" alt="здесь должна была быть картинка, но не нашлась">
-    <br>
-    Вот она какая, красная планета
+    <title>Title</title>
+    <h1>Человечество вырастает из детства.</h1>
+
+<h1>Человечеству мала одна планета.</h1>
+
+<h1>Мы сделаем обитаемыми безжизненные пока планеты.</h1>
+
+<h1>И начнем с Марса!</h1>
+
+<h1>Присоединяйся!</h1>
 </head>
 <body>
+
 </body>
 </html>'''
+
+
+@app.route('/image_mars')
+def mars():
+    with open("sait.html", encoding='utf-8') as file:
+        return file.read()
 
 
 if __name__ == "__main__":
