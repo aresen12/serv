@@ -34,7 +34,7 @@ def dev():
 
 
 @app.route('/promotion')
-def rek():
+def promotion():
     return '''<!DOCTYPE html>
 <html lang="en">
 <head>
