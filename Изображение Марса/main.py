@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
@@ -58,13 +58,14 @@ def rek():
 
 @app.route('/image_mars')
 def mars():
-    return '''<!DOCTYPE html>
+    return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Привет, Марс!</title>
     <h1>Жди нас, Марс!</h1>
-    <img src="img/mars.jpg" alt="здесь должна была быть картинка, но не нашлась">
+    <img src="{url_for('static', filename='img/mars.jpg')}" 
+           alt="здесь должна была быть картинка, но не нашлась">
     <br>
     Вот она какая, красная планета
 </head>
