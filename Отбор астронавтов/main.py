@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, request
 
 app = Flask(__name__)
 
@@ -80,6 +80,22 @@ def promotion_image():
     data = file.read()
     file.close()
     return data
+
+
+@app.route('/astronaut_selection', methods=['POST', 'GET'])
+def form_sample():
+    if request.method == 'GET':
+        with open('astronaut_selection.html', encoding='utf-8') as file:
+            return file.read()
+    if request.method == "POST":
+        return """<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Пример формы</title>
+</head>
+<body>Вы успешно записаны</body>"""
 
 
 if __name__ == "__main__":
