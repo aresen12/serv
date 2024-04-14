@@ -152,7 +152,7 @@ def get_res(nickname, level, rating):
 </html>'''
 
 
-@app.route("/load_image", methods=["GET", "POST"])
+@app.route("/load_photo", methods=["GET", "POST"])
 def load_ima():
     if request.method == 'POST':
         f = request.files['file']
